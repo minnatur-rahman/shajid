@@ -16,7 +16,16 @@
 
                     {{ __('You are logged in!') }} {{ Auth::user()->name }}
 
-                    <a href="{{route('user.details',  Crypt::encryptString('2'))}}" class="btn btn-sm btn-info">Shajid Details</a>
+                    {{-- <a href="{{route('user.details',  Crypt::encryptString('2'))}}" class="btn btn-sm btn-info">Shajid Details</a> --}}
+                        <form action="{{route('store.user')}}" method="post">
+                            @csrf
+                             <div>
+                                <label>password</label>
+                                <input type="password" name="password" class="form-control" required>
+                             </div><br><br>
+                             <button class="btn btn-default btn-danger" type="submit">Submit</button>
+                        </form>
+
                 </div>
             </div>
         </div>

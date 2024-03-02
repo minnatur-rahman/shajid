@@ -23,3 +23,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/user/details/{id}', [App\Http\Controllers\HomeController::class, 'details'])->name('user.details');
+
+
+Route::post('/store/user', [App\Http\Controllers\HomeController::class, 'store'])->name('store.user');
