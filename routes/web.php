@@ -26,3 +26,5 @@ Route::get('/user/details/{id}', [App\Http\Controllers\HomeController::class, 'd
 
 
 Route::post('/store/user', [App\Http\Controllers\HomeController::class, 'store'])->name('store.user');
+Route::get('/verify', [VerificationController::class, 'verify'])->name('verification.verify');
+
