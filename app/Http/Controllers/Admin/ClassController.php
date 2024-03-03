@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DB;
+
 
 class ClassController extends Controller
 {
@@ -16,6 +18,7 @@ class ClassController extends Controller
     // index method for all class form database
     public function index()
     {
-        echo "done";
+        $class = DB::table('classes')->get();
+        dd($class);
     }
 }
