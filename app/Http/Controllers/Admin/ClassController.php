@@ -21,4 +21,8 @@ class ClassController extends Controller
         $class = DB::table('classes')->get();
         return view('admin.class.index', compact('class'));
     }
+    //create method
+    public function create(){
+        return view('admin.class.create');
+    }
 }
