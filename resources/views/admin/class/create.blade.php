@@ -10,11 +10,20 @@
                 </div>
 
                 <div class="card-body">
+                    @if(session()->has('success'))
+                    <strong class="texe-success">{{ session()->get('success') }}</strong>
+                    @endif
                     <form action="{{route('store.class')}}" method="POST">
+                        @csrf
                         <div class="mb-3">
                           <label for="exampleInputEmail1" class="form-label">Class Name</label>
-                          <input type="text" name="class_name" class="form-control" id="exampleInputEmail1" placeholder="Class Name">
-
+                          <input type="text" name="class_name" class="form-control @error('class_name') is-invalid @enderror"
+                          id="exampleInputEmail1" placeholder="Class Name" value="{{old('class_name')}}">
+                            @error('class_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{$messege}}</strong>
+                                </span>
+                            @enderror
                         </div>
                           <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

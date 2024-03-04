@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('class', [App\Http\Controllers\Admin\ClassController::class, 'index'])->name('class.index');
 Route::get('class/create', [App\Http\Controllers\Admin\ClassController::class, 'create'])->name('create.class');
-Route::get('create/store', [App\Http\Controllers\Admin\ClassController::class, 'store'])->name('store.class');
+Route::post('create/store', [App\Http\Controllers\Admin\ClassController::class, 'store'])->name('store.class');
 
 
 
