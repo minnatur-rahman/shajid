@@ -19,6 +19,6 @@ class ClassController extends Controller
     public function index()
     {
         $class = DB::table('classes')->get();
-        dd($class);
+        return view('admin.class.index', compact('class'));
     }
 }
