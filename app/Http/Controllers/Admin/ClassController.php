@@ -25,4 +25,16 @@ class ClassController extends Controller
     public function create(){
         return view('admin.class.create');
     }
+    //store class
+    public function store(Request $request){
+        $request->validate([
+            'class_name' => 'required|unique:classes',
+        ]);
+        $data=array(
+            'class_name' => $request->class_name,
+        );
+        DB::table('classes')->insert($data);
+        return redirect()->back()->with('success', 'successfully inserted');
+
+    }
 }
