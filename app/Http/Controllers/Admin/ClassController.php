@@ -45,6 +45,12 @@ class ClassController extends Controller
         return redirect()->back()->with('success', 'successfully deleted');
     }
 
+    //edit method
+    public function edit($id){
+       $data = DB::table('classes')->where('id', $id)->first();
+        return view('admin.class.edit', compact('$data'));
+    }
+
     //update method
     public function update(Request $request,$id){
         $request->validate([

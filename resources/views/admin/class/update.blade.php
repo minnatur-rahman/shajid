@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Add New Class') }}
+                <div class="card-header">{{ __('Edit Class') }}
                     <a class="btn btn-danger btn-sm" style="float: right;" href="{{route('class.index')}}">All Class</a>
                 </div>
 
@@ -13,8 +13,8 @@
                     @if(session()->has('success'))
                     <strong class="texe-success">{{ session()->get('success') }}</strong>
                     @endif
-                    <form action="{{route('store.class')}}" method="POST">
-                        @csrf
+                    <form action="{{route('class.update')}}" method="POST">
+                          @csrf
                         <div class="mb-3">
                           <label for="exampleInputEmail1" class="form-label">Class Name</label>
                           <input type="text" name="class_name" class="form-control @error('class_name') is-invalid @enderror"
@@ -25,7 +25,7 @@
                                 </span>
                             @enderror
                         </div>
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <button type="submit" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </div>

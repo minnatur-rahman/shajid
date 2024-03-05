@@ -22,7 +22,7 @@ Route::get('class', [App\Http\Controllers\Admin\ClassController::class, 'index']
 Route::get('class/create', [App\Http\Controllers\Admin\ClassController::class, 'create'])->name('create.class');
 Route::post('create/store', [App\Http\Controllers\Admin\ClassController::class, 'store'])->name('store.class');
 Route::get('class/delete/{id}', [App\Http\Controllers\Admin\ClassController::class, 'delete'])->name('class.delete');
-Route::post('class/update/{id}', [App\Http\Controllers\Admin\ClassController::class, 'update'])->name('class.update');
+Route::get('class/edit/{id}', [App\Http\Controllers\Admin\ClassController::class, 'edit'])->name('class.edit');
 
 
 
