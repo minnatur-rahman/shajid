@@ -21,7 +21,7 @@
                           id="exampleInputEmail1" placeholder="Class Name" value="{{old('class_name')}}">
                             @error('class_name')
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{$messege}}</strong>
+                                    {{-- <strong>{{$messege}}</strong> --}}
                                 </span>
                             @enderror
                         </div>

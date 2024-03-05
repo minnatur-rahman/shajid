@@ -19,13 +19,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($class as $key => $cla)
+                            @foreach ($class as $key => $row)
                             <tr>
                                 <td>{{++$key }}</td>
-                                <td>{{$cla->class_name}}</td>
+                                <td>{{$row->class_name}}</td>
                                 <td>
                                     <a class="btn btn-danger" href="">Edit</a>
-                                    <a class="btn btn-success" href="">Delete</a>
+                                    <a class="btn btn-success" href="{{ route('class.delete',$row->id) }}">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
