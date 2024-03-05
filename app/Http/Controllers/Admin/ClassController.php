@@ -21,10 +21,12 @@ class ClassController extends Controller
         $class = DB::table('classes')->get();
         return view('admin.class.index', compact('class'));
     }
+
     //create method
     public function create(){
         return view('admin.class.create');
     }
+
     //store class
     public function store(Request $request){
         $request->validate([
@@ -36,9 +38,22 @@ class ClassController extends Controller
         DB::table('classes')->insert($data);
         return redirect()->back()->with('success', 'successfully inserted');
     }
+
     //delete method
     public function delete($id){
         DB::table('classes')->where('id',$id)->delete();
         return redirect()->back()->with('success', 'successfully deleted');
+    }
+
+    //update method
+    public function update(Request $request,$id){
+        $request->validate([
+            'class_name' => 'required',
+        ]);
+        $data = array(
+            'class_name' => $request->class_name,
+        );
+        DB::table('classes')->where('id',$id)->update($data);
+        return redirect()->back()->with('success', 'successfully update');
     }
 }
