@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\StudentController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\VerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//class crud rules//
 Route::get('class', [App\Http\Controllers\Admin\ClassController::class, 'index'])->name('class.index');
 Route::get('class/create', [App\Http\Controllers\Admin\ClassController::class, 'create'])->name('create.class');
 Route::post('create/store', [App\Http\Controllers\Admin\ClassController::class, 'store'])->name('store.class');
@@ -25,7 +28,8 @@ Route::get('class/delete/{id}', [App\Http\Controllers\Admin\ClassController::cla
 Route::get('class/edit/{id}', [App\Http\Controllers\Admin\ClassController::class, 'edit'])->name('class.edit');
 Route::post('class/update/{id}', [App\Http\Controllers\Admin\ClassController::class, 'update'])->name('class.update');
 
-
+//students crud rules//
+Route::resource('students', StudentController::class);
 
 
 

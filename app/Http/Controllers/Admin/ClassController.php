@@ -36,13 +36,13 @@ class ClassController extends Controller
             'class_name' => $request->class_name,
         );
         DB::table('classes')->insert($data);
-        return redirect()->back()->with('success', 'successfully inserted');
+        return redirect()->back()->with('success', 'Successfully Inserted');
     }
 
     //delete method
     public function delete($id){
         DB::table('classes')->where('id',$id)->delete();
-        return redirect()->back()->with('success', 'successfully deleted');
+        return redirect()->back()->with('success', 'Successfully Deleted');
     }
 
     //edit method
