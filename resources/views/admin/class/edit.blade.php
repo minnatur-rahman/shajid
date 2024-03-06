@@ -10,9 +10,13 @@
                 </div>
 
                 <div class="card-body">
+                    <div align="center" style="padding-top: 30px;">
                     @if(session()->has('success'))
+                    <div class="alert alert-success">
                     <strong class="texe-success">{{ session()->get('success') }}</strong>
+                    </div>
                     @endif
+                    </div>
                     <form action="{{ route('class.update', ['id' => $data->id]) }}" method="POST">
                           @csrf
                         <div class="mb-3">
