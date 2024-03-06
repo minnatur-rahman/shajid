@@ -13,7 +13,7 @@
                     @if(session()->has('success'))
                     <strong class="texe-success">{{ session()->get('success') }}</strong>
                     @endif
-                    <form action="{{ route('class.edit', ['id' => $id]) }}" method="POST">
+                    <form action="{{ route('class.edit', ['id' => $data->id]) }}" method="POST">
                           @csrf
                         <div class="mb-3">
                           <label for="exampleInputEmail1" class="form-label">Class Name</label>
