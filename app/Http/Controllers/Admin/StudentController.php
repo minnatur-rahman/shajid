@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DB;
 
 class StudentController extends Controller
 {
@@ -12,7 +14,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+       $students = DB::table('students')->orderby('roll','ASC')->get();
+       return view('admin.students.index', compact('students'));
     }
 
     /**
