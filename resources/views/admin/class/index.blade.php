@@ -24,7 +24,7 @@
                                 <td>{{++$key }}</td>
                                 <td>{{$row->class_name}}</td>
                                 <td>
-                                    <a class="btn btn-danger" href="{{ route('class.update',$row->id) }}">Edit</a>
+                                    <a class="btn btn-danger" href="{{ route('class.edit',$row->id) }}">Edit</a>
                                     <a class="btn btn-success" href="{{ route('class.delete',$row->id) }}">Delete</a>
                                 </td>
                             </tr>

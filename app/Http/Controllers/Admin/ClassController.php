@@ -46,9 +46,9 @@ class ClassController extends Controller
     }
 
     //edit method
-    public function edit($id){
+    public function edit(Request $request,$id){
        $data = DB::table('classes')->where('id', $id)->first();
-        return view('admin.class.edit', compact('$data'));
+        return view('admin.class.edit', compact('data'));
     }
 
     //update method
