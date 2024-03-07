@@ -23,7 +23,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $classes = DB::table('classes')->get();
+        return view('admin.students.create', compact('classes'));
     }
 
     /**

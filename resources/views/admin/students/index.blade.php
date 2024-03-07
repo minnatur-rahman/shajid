@@ -5,8 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('All Class') }}
-                    <a class="btn btn-primary btn-sm" style="float: right;" href="{{route("create.class")}}">Add New</a>
+                <div class="card-header">{{ __('All Students') }}
+                    <a class="btn btn-primary btn-sm" style="float: right;" href="{{route("students.create")}}">Add New Student</a>
                 </div>
                 <div class="card-body">
 
