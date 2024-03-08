@@ -60,9 +60,11 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $classes = DB::table('classes')->get();
+        $students = DB::table('students')->where('id',$id)->first();
+        return view('admin.students.create', compact('classes', 'students'));
     }
 
     /**
@@ -76,8 +78,9 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+       DB::table('students')->where('id', $id)->delete();
+       return redirect()->back()->with('success', 'Successfully Deleted');
     }
 }
