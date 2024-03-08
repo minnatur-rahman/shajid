@@ -55,7 +55,7 @@ class StudentController extends Controller
     public function show($id)
     {
        $student = DB::table('students')->where('id',$id)->first();
-       return response()->json($student);
+       return view('admin.students.view', compact('student'));
     }
 
     /**
