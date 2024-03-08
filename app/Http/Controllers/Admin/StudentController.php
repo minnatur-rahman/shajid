@@ -52,9 +52,10 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+       $student = DB::table('students')->where('id',$id)->first();
+       return response()->json($student);
     }
 
     /**
@@ -63,16 +64,32 @@ class StudentController extends Controller
     public function edit($id)
     {
         $classes = DB::table('classes')->get();
-        $students = DB::table('students')->where('id',$id)->first();
-        return view('admin.students.create', compact('classes', 'students'));
+        $student = DB::table('students')->where('id',$id)->first();
+        return view('admin.students.edit', compact('classes', 'student'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+
+        $request->validate([
+            'class_id' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'roll' => 'required',
+        ]);
+
+        $data=array(
+            'class_id' => $request->class_id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'roll' => $request->roll,
+        );
+        DB::table('students')->where('id',$id)->update($data);
+        return redirect()->route('students.index')->with('success', 'Successfully Updated');
     }
 
     /**

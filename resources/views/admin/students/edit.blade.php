@@ -17,20 +17,21 @@
                            </div>
                         @endif
                     </div>
-                    <form action="{{route('students.store')}}" method="POST">
+                    <form action="{{route('students.update', $student->id)}}" method="POST">
                         @csrf
+                        <input type="hidden" name="_method" value="PATCH">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Class Name</label>
                               <select class="form-control" name="class_id">
                                 @foreach ($classes as $row)
-                                <option value="{{ $row->id }}"> @if( $row->id == $students->class_id) selected @endif {{ $row->class_name }}</option>
+                                <option value="{{ $row->id }}">{{ $row->class_name }}</option>
                                 @endforeach
                               </select>
                           </div>
 
                         <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Student Name <span class="text-danger">*</span></label>
-                          <input type="text" name="name" class="form-control"value="{{ $student->name }}" required>
+                            <label for="exampleInputEmail1" class="form-label">Student Name <span class="text-danger">*</span></label>
+                            <input type="text" name="name" class="form-control" value="{{ $student->name }}" required>
                         </div>
 
                         <div class="mb-3">
@@ -38,20 +39,18 @@
                             <input type="text" name="roll" class="form-control" value="{{ $student->roll }}" required>
                         </div>
 
-                          <div class="mb-3">
+                        <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Student Email </label>
-                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                            id="exampleInputEmail1" placeholder="Student Email" value="{{ $student->email }}">
+                            <input type="email" name="email" class="form-control" value="{{ $student->email }}" required>
+                        </div>
 
-                          </div>
-
-                          <div class="mb-3">
+                        <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Student Phone <span class="text-danger">*</span></label>
-                            <input type="tel" name="phone" class="form-control"value="{{ $student->phone }}">
-                          </div>
+                            <input type="tel" name="phone" class="form-control"value="{{ $student->phone }}" required>
+                        </div>
 
 
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <button type="submit" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </div>
@@ -59,4 +58,3 @@
     </div>
 </div>
 @endsection
-

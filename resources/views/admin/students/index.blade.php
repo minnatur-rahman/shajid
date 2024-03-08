@@ -36,6 +36,7 @@
                                 <td>{{ $row->phone }}</td>
                                 <td>{{$row->class_id}}</td>
                                 <td>
+                                    <a class="btn btn-success" href="{{ route('students.show', $row->id) }}">View</a>
                                     <a class="btn btn-info" href="{{ route('students.edit', $row->id) }}">Edit</a>
                                     <form action="{{ route('students.destroy', $row->id) }}" method="POST">
                                         @csrf
