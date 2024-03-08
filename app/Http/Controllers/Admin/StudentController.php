@@ -32,7 +32,21 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'class_id' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'roll' => 'required',
+        ]);
+        $data=array(
+            'class_id' => $request->class_id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'roll' => $request->roll,
+        );
+        DB::table('students')->insert($data);
+        return redirect()->back()->with('success', 'Successfully Inserted');
     }
 
     /**

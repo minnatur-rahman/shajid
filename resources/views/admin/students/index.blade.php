@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('All Students') }}
-                    <a class="btn btn-primary btn-sm" style="float: right;" href="{{route("students.create")}}">Add New Student</a>
+                    <a class="btn btn-primary btn-sm" style="float: right;" href="{{route('students.create')}}">Add New Student</a>
                 </div>
                 <div class="card-body">
 
@@ -25,10 +25,10 @@
                             @foreach ($students as $key => $row)
                             <tr>
                                 <td>{{ ++$key }}</td>
-                                <td>{{ $row->name }}</td>
                                 <td>{{ $row->roll }}</td>
+                                <td>{{ $row->name }}</td>
                                 <td>{{ $row->phone }}</td>
-                                <td>{{$row->class_name}}</td>
+                                <td>{{$row->class_id}}</td>
                                 <td>
                                     <a class="btn btn-danger" href="">Edit</a>
                                     <a class="btn btn-success" href="">Delete</a>
