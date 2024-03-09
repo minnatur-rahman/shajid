@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use DB;
+use Illuminate\Support\Str;
 
 class TeacherSeeder extends Seeder
 {
@@ -12,34 +14,34 @@ class TeacherSeeder extends Seeder
      */
     public function run(): void
     {
-        $array = [
-            [
-                'name' => str_random(80),
-                'name' => str_random(70).'@gmail.com',
-                'name' => str_random(50),
-            ],
+        // $array = [
+        //     [
+        //         'name' => Str::random(80),
+        //         'name' => Str::random(70).'@gmail.com',
+        //         'name' => Str::random(50),
+        //     ],
 
-            [
-                'name' => str_random(80),
-                'name' => str_random(70).'@gmail.com',
-                'name' => str_random(50),
-            ],
+        //     [
+        //         'name' => Str::random(80),
+        //         'name' => Str::random(70).'@gmail.com',
+        //         'name' => Str::random(50),
+        //     ],
 
-            [
-                'name' => str_random(80),
-                'name' => str_random(70).'@gmail.com',
-                'name' => str_random(50),
-            ],
+        //     [
+        //         'name' => Str::random(80),
+        //         'name' => Str::random(70).'@gmail.com',
+        //         'name' => Str::random(50),
+        //     ],
 
-            [
-                'name' => str_random(80),
-                'name' => str_random(70).'@gmail.com',
-                'name' => str_random(50),
-            ],
+        //     [
+        //         'name' => Str::random(80),
+        //         'name' => Str::random(70).'@gmail.com',
+        //         'name' => Str::random(50),
+        //     ],
 
-            ];
+        //     ];
 
-            DB::table('teachers')->insert();
+        //     DB::table('teachers')->insert();
 
     }
 }
