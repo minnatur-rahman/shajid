@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use DB;
 use Illuminate\Support\Str;
+use App\Models\Teacher;
 
 class TeacherSeeder extends Seeder
 {
@@ -14,6 +15,7 @@ class TeacherSeeder extends Seeder
      */
     public function run(): void
     {
+        Teacher::factory()->count(20)->create();
         // $array = [
         //     [
         //         'name' => Str::random(80),
